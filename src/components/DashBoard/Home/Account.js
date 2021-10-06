@@ -33,10 +33,14 @@ const Account = () => {
             <div className="card-body">100 LPS</div>
           </div>
           <div className="col">
-            <div className="card-body">-></div>
+            <button className="btn btn-outline-dark">
+              <i class="bi bi-caret-right-fill"></i>
+            </button>
           </div>
           <div className="col">
-            <div className="card-body">-></div>
+            <button className="btn btn-outline-dark">
+              <i class="bi bi-caret-right-fill"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -70,10 +74,18 @@ const Account = () => {
             <div className="card-body">97 USD</div>
           </div>
           <div className="col">
-            <div className="card-body">-></div>
+            <div className="card-body">
+              <button className="btn btn-outline-dark">
+                <i class="bi bi-caret-right-fill"></i>
+              </button>
+            </div>
           </div>
           <div className="col">
-            <div className="card-body">-></div>
+            <div className="card-body">
+              <button className="btn btn-outline-dark">
+                <i class="bi bi-caret-right-fill"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
