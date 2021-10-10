@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Formik, Form } from "formik";
 import { TextField } from "./TextField";
 import * as Yup from "yup";
 import signUpImage from ".../../../src/imgs/landingPage.svg";
+import AuthContext from "../../../context/auth-context";
+import { useHistory } from "react-router-dom";
 
 export const Signup = () => {
+  const authCtx = useContext(AuthContext);
+  const [disableSubmit, setDisableSubmit] = useState(false);
+  const [error, setError] = useState("");
+  const history = useHistory();
+  const [values, setValues] = useState(null);
+
   const validate = Yup.object({
     firstName: Yup.string()
       .max(15, "Must be 15 characters or less")
@@ -20,6 +28,11 @@ export const Signup = () => {
       .oneOf([Yup.ref("password"), null], "Password must match")
       .required("Confirm password is required"),
   });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Formik
       initialValues={{
@@ -30,8 +43,18 @@ export const Signup = () => {
         confirmPassword: "",
       }}
       validationSchema={validate}
-      onSubmit={(values) => {
-        console.log(values);
+      onSubmit={async (values) => {
+        try {
+          setError("");
+          setDisableSubmit(true);
+          console.log(values.email, values.password);
+          await authCtx.register(values.email, values.password);
+          history.push("/");
+        } catch {
+          setError("Ocurrio un error, no se puede registrar el usuario");
+          console.log({ error });
+        }
+        setDisableSubmit(false);
       }}
     >
       {(formik) => (
@@ -50,7 +73,11 @@ export const Signup = () => {
                     name="confirmPassword"
                     type="password"
                   />
-                  <button className="btn btn-dark mt-3" type="submit">
+                  <button
+                    disable={disableSubmit}
+                    className="btn btn-dark mt-3"
+                    type="submit"
+                  >
                     Register
                   </button>
                   <button className="btn btn-danger mt-3 ml-3" type="reset">

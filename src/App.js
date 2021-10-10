@@ -1,10 +1,11 @@
 import NavBar from "../src/components/Home/NavBar/NavBar";
-import SignUp from "../src/components/Home/SignUp/SignUp";
-
+import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
     <>
-      <NavBar />
+      <AuthProvider>
+        <NavBar />
+      </AuthProvider>
     </>
   );
 }
