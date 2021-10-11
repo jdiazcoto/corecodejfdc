@@ -17,7 +17,7 @@ const Login = () => {
       console.log(email.current.value);
       console.log(password.current.value);
       await authCtx.login(email.current.value, password.current.value);
-      history.push("/");
+      history.push("/dashboard");
     } catch {
       setError("Ocurrio un error, no se puede iniciar sesion");
     }

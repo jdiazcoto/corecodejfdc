@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import logo from "../../../imgs/logo.png";
 import "bootstrap/js/src/collapse.js";
 import Contact from "../Contact/Contact";
@@ -6,11 +6,30 @@ import Login from "../Login/Login";
 import Home from "../Home/Home";
 import SignUp from "../SignUp/SignUp";
 import DashBoardHome from "../../DashBoard/Home/DashboardHome";
-
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Layout from "../../Layout/Layout";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  useHistory,
+} from "react-router-dom";
+import AuthContext from "../../../context/auth-context";
+import DashLink from "./DashLink";
 
 const NavBar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const authCtx = useContext(AuthContext);
+  const history = useHistory();
+
+  const handleLogOut = async () => {
+    try {
+      await authCtx.logout();
+      history.push("/login");
+    } catch (e) {
+      console.log(`Error: ${e}`);
+    }
+  };
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
 
@@ -50,7 +69,6 @@ const NavBar = () => {
             <Link to="/" style={{ textDecoration: "none" }}>
               <span className="nav-link nav-item mx-3">Home</span>
             </Link>
-
             <Link to="/contact" style={{ textDecoration: "none" }}>
               <span className="nav-link nav-item mx-3">Contact Us</span>
             </Link>
@@ -60,24 +78,18 @@ const NavBar = () => {
                 Sign Up
               </Link>
             </li> */}
-
             <Link to="/signup" style={{ textDecoration: "none" }}>
               <button className="btn  btn-outline-primary nav-link mx-3 ">
                 Sign Up
               </button>
             </Link>
-
             <Link to="/login" style={{ textDecoration: "none" }}>
               <button className="btn  btn-outline-danger nav-link mx-3 ">
                 Login
               </button>
             </Link>
 
-            <Link to="/dashboard" style={{ textDecoration: "none" }}>
-              <button className="btn  btn-outline-success nav-link mx-3 ">
-                Dashboard
-              </button>
-            </Link>
+            {authCtx.currentUser ? <DashLink /> : null}
           </ul>
         </div>
       </nav>
@@ -86,7 +98,7 @@ const NavBar = () => {
         <Route path="/contact" component={Contact}></Route>
         <Route path="/signup" component={SignUp}></Route>
         <Route path="/login" component={Login}></Route>
-        <Route path="/dashboard" component={DashBoardHome}></Route>
+        <Layout path="/dashboard" component={DashBoardHome}></Layout>
       </Switch>
     </Router>
   );

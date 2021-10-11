@@ -49,7 +49,7 @@ export const Signup = () => {
           setDisableSubmit(true);
           console.log(values.email, values.password);
           await authCtx.register(values.email, values.password);
-          history.push("/");
+          history.push("/dashboard");
         } catch {
           setError("Ocurrio un error, no se puede registrar el usuario");
           console.log({ error });
