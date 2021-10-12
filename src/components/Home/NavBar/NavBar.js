@@ -25,7 +25,7 @@ const NavBar = () => {
   const handleLogOut = async () => {
     try {
       await authCtx.logout();
-      history.push("/login");
+      history.push("/");
     } catch (e) {
       console.log(`Error: ${e}`);
     }
@@ -89,7 +89,18 @@ const NavBar = () => {
               </button>
             </Link>
 
-            {authCtx.currentUser ? <DashLink /> : null}
+            {authCtx.currentUser ? (
+              <>
+                <DashLink />
+                <button
+                  className="btn  btn-outline-danger nav-link mx-3 "
+                  onClick={handleLogOut}
+                >
+                  Logout
+                </button>
+                <div className="m-2">Welcome {authCtx.currentUser.email}</div>
+              </>
+            ) : null}
           </ul>
         </div>
       </nav>
