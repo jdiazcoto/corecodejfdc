@@ -1,11 +1,14 @@
 import NavBar from "../src/components/Home/NavBar/NavBar";
 import AuthProvider from "./context/AuthProvider";
+import { Provider } from "react-redux";
 function App() {
   return (
     <>
-      <AuthProvider>
-        <NavBar />
-      </AuthProvider>
+      <Provider>
+        <AuthProvider>
+          <NavBar />
+        </AuthProvider>
+      </Provider>
     </>
   );
 }
