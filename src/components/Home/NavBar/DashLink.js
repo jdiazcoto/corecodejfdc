@@ -5,7 +5,7 @@ const DashLink = () => {
   return (
     <div>
       <Link to="/dashboard" style={{ textDecoration: "none" }}>
-        <button className="btn  btn-outline-success nav-link mx-3 ">
+        <button className="btn  btn-outline-success nav-link mx-3 justify-content-start ">
           Dashboard
         </button>
       </Link>

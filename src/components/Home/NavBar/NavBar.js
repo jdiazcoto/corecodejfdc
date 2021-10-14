@@ -66,41 +66,38 @@ const NavBar = () => {
           id="navbarsExample09"
         >
           <ul className="navbar-nav">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <span className="nav-link nav-item mx-3">Home</span>
-            </Link>
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <span className="nav-link nav-item mx-3">Contact Us</span>
-            </Link>
-            {/*
-            <li className="btn  btn-outline-primary nav-link text-white mx-3 ">
-              <Link to="/signup" /* style={{ textDecoration: "none" >
-                Sign Up
-              </Link>
-            </li> */}
-            <Link to="/signup" style={{ textDecoration: "none" }}>
-              <button className="btn  btn-outline-primary nav-link mx-3 ">
-                Sign Up
-              </button>
-            </Link>
-            <Link to="/login" style={{ textDecoration: "none" }}>
-              <button className="btn  btn-outline-danger nav-link mx-3 ">
-                Login
-              </button>
-            </Link>
-
             {authCtx.currentUser ? (
               <>
                 <DashLink />
+
+                <div className="m-2">Welcome {authCtx.currentUser.email}</div>
                 <button
                   className="btn  btn-outline-danger nav-link mx-3 "
                   onClick={handleLogOut}
                 >
                   Logout
                 </button>
-                <div className="m-2">Welcome {authCtx.currentUser.email}</div>
               </>
-            ) : null}
+            ) : (
+              <>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <span className="nav-link nav-item mx-3">Home</span>
+                </Link>
+                <Link to="/contact" style={{ textDecoration: "none" }}>
+                  <span className="nav-link nav-item mx-3">Contact Us</span>
+                </Link>
+                <Link to="/signup" style={{ textDecoration: "none" }}>
+                  <button className="btn  btn-outline-primary nav-link mx-3 ">
+                    Sign Up
+                  </button>
+                </Link>
+                <Link to="/login" style={{ textDecoration: "none" }}>
+                  <button className="btn  btn-outline-danger nav-link mx-3 ">
+                    Login
+                  </button>
+                </Link>
+              </>
+            )}
           </ul>
         </div>
       </nav>

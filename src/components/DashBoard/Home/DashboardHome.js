@@ -25,6 +25,10 @@ const DashBoardHome = () => {
                   className="nav-link link-dark"
                   style={{ width: "280px" }}
                 >
+                  <i
+                    class="bi bi-house-fill"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>
                   Dashboard Home
                 </Link>
               </li>
@@ -34,6 +38,10 @@ const DashBoardHome = () => {
                   className="nav-link link-dark"
                   style={{ width: "280px" }}
                 >
+                  <i
+                    class="bi bi-bar-chart-fill"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>
                   Balances and Movements
                 </Link>
               </li>
@@ -42,11 +50,19 @@ const DashBoardHome = () => {
                   to="/dashboard/expensesandincomes"
                   className="nav-link link-dark"
                 >
-                  Expenses/Incomes Report
+                  <i
+                    class="bi bi-cash-coin"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>
+                  Expenses/Incomes
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/dashboard/transfers" className="nav-link link-dark">
+                  <i
+                    class="bi bi-cart-check-fill"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>
                   Transfers
                 </Link>
               </li>
@@ -55,12 +71,20 @@ const DashBoardHome = () => {
                   to="/dashboard/currencyexchange"
                   className="nav-link link-dark"
                 >
+                  <i
+                    class="bi bi-currency-exchange"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>
                   Currency Exchange
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/dashboard/settings" className="nav-link link-dark">
-                  Settings
+                  <i
+                    className="bi bi-tools"
+                    style={{ fontSize: "1.5em", padding: "10px" }}
+                  ></i>{" "}
+                  Setting
                 </Link>
               </li>
             </ul>
