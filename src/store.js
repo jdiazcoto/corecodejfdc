@@ -6,7 +6,7 @@ const store = createStore(() => ({
       id: 1,
       description: "HN-BANK ACCOUNT",
       product: "740199669",
-      balance: "100",
+      balance: "1000000",
     },
     {
       id: 2,
@@ -66,3 +66,5 @@ const store = createStore(() => ({
     },
   ],
 }));
+
+export default store;
