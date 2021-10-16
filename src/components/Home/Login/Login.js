@@ -49,7 +49,7 @@ const Login = () => {
             />
           </div>
           <button
-            className="btn btn-dark mt-3"
+            className="btn btn-outline-dark mt-3"
             onClick={handleSubmit}
             type="submit"
           >

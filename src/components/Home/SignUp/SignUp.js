@@ -75,12 +75,15 @@ export const Signup = () => {
                   />
                   <button
                     disable={disableSubmit}
-                    className="btn btn-dark mt-3"
+                    className="btn btn-outline-dark mt-3"
                     type="submit"
                   >
                     Register
                   </button>
-                  <button className="btn btn-danger mt-3 ml-3" type="reset">
+                  <button
+                    className="btn btn-outline-danger mt-3 ml-3"
+                    type="reset"
+                  >
                     Reset
                   </button>
                 </Form>

@@ -87,12 +87,12 @@ const NavBar = () => {
                   <span className="nav-link nav-item mx-3">Contact Us</span>
                 </Link>
                 <Link to="/signup" style={{ textDecoration: "none" }}>
-                  <button className="btn  btn-outline-primary nav-link mx-3 ">
+                  <button className="btn  btn-outline-dark  mx-3 ">
                     Sign Up
                   </button>
                 </Link>
                 <Link to="/login" style={{ textDecoration: "none" }}>
-                  <button className="btn  btn-outline-danger nav-link mx-3 ">
+                  <button className="btn  btn-outline-danger mx-3 ">
                     Login
                   </button>
                 </Link>
