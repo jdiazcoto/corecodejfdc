@@ -2,6 +2,8 @@ import React, { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import TextFieldLogIn from "./TextFieldLogIn";
 import AuthContext from "../../../context/auth-context";
+import signInImage from ".../../../src/imgs/login.svg";
+
 const Login = () => {
   const authCtx = useContext(AuthContext);
   const [error, setError] = useState("");
@@ -53,6 +55,9 @@ const Login = () => {
           >
             Login
           </button>
+        </div>
+        <div className="col-md-7  my-auto">
+          <img className="img-fluid w-100 ml-3" src={signInImage} alt="" />
         </div>
       </div>
     </div>

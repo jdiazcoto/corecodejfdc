@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Formik, Form } from "formik";
 import { TextField } from "./TextField";
 import * as Yup from "yup";
-import signUpImage from ".../../../src/imgs/landingPage.svg";
+import signUpImage from ".../../../src/imgs/signup.svg";
 import AuthContext from "../../../context/auth-context";
 import { useHistory } from "react-router-dom";
 

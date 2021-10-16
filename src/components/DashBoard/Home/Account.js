@@ -1,42 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import AccountDetails from "./AccountDetails";
 const Account = () => {
   const accountBalanceLocal = useSelector((state) => state.accountLocal);
   const accountBalanceDollars = useSelector((state) => state.accountDollars);
 
-  /* const [accountBalanceDollars, setAccountBalanceDollars] = useState([
-    {
-      id: 1,
-      description: "US-BANK ACCOUNT",
-      product: "754015266",
-      balance: "97",
-    },
-    {
-      id: 2,
-      description: "US-BANK ACCOUNT",
-      product: "750996989",
-      balance: "336",
-    },
-    {
-      id: 3,
-      description: "US-BANK ACCOUNT",
-      product: "751429709",
-      balance: "9",
-    },
-    {
-      id: 4,
-      description: "US-BANK ACCOUNT",
-      product: "751678901",
-      balance: "41260",
-    },
-    {
-      id: 5,
-      description: "US-BANK ACCOUNT",
-      product: "757766889",
-      balance: "9697",
-    },
-  ]);
- */
   return (
     <>
       <div className="card mt-5">
@@ -58,7 +26,8 @@ const Account = () => {
             <div className="card-body">Transfer</div>
           </div>
         </div>
-
+        <AccountDetails balance={accountBalanceLocal} />
+        {/*
         {accountBalanceLocal.map((data) => (
           <>
             <div className="row" key={data.id}>
@@ -83,7 +52,7 @@ const Account = () => {
               </div>
             </div>
           </>
-        ))}
+        ))} */}
       </div>
 
       <div className="card mt-5">

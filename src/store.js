@@ -6,7 +6,7 @@ const store = createStore(() => ({
       id: 1,
       description: "HN-BANK ACCOUNT",
       product: "740199669",
-      balance: "1000000",
+      balance: "666",
     },
     {
       id: 2,
