@@ -72,7 +72,7 @@ const NavBar = () => {
 
                 <div className="m-2">Welcome {authCtx.currentUser.email}</div>
                 <button
-                  className="btn  btn-outline-danger nav-link mx-3 "
+                  className="btn  btn-outline-danger mx-3 "
                   onClick={handleLogOut}
                 >
                   Logout
