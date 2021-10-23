@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import AddAccount from "./AddAcount";
 import AccountDetails from "./AccountDetails";
 const Account = () => {
   const accountBalanceLocal = useSelector((state) => state.accountLocal);
@@ -7,6 +8,7 @@ const Account = () => {
 
   return (
     <>
+      <AddAccount />
       <div className="card mt-5">
         <h5 className="card-title py-2">Account</h5>
         <div className="row">

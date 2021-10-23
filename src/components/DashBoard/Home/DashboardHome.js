@@ -8,8 +8,6 @@ import ExpensesVsIncome from "../ExpensesVsIncome/ExpensesVsIncome";
 import Account from "./Account";
 
 const DashBoardHome = () => {
-  const [showTemp, setShowTemp] = useState(true);
-
   return (
     <>
       <div className="row">
