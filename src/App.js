@@ -1,7 +1,15 @@
 import NavBar from "../src/components/Home/NavBar/NavBar";
 import AuthProvider from "./context/AuthProvider";
 import { Provider } from "react-redux";
-import store from "./store";
+import { configureStore } from "@reduxjs/toolkit";
+import currencyReducer from "./state/currencyToggle";
+
+const store = configureStore({
+  reducer: {
+    currencyToggle: currencyReducer,
+  },
+});
+
 function App() {
   return (
     <>
